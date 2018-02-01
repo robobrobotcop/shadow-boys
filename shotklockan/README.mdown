@@ -1,0 +1,9 @@
+The famous `shotklockan` from Emil Petterssons 30th birthday (In Swedish).
+
+- Add a slack webhook to a channel where all party-goers are invited. 
+
+- Change the list of names to all participants of the party/slack channel. 
+
+- Set up the script with cronjob as many times during the party as you wish. 
+
+- Drink when your name is up.
