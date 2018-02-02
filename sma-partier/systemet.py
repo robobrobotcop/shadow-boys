@@ -24,14 +24,14 @@ for line in result:
     logging.info(url)
     logging.info(file_name)
     response = requests.get(url, stream=True)
-    if os.path.isfile('{}.xlsx'.format(csv_file_name)):
+    if os.path.isfile('{}/{}.xlsx'.format(os.path.dirname(os.path.abspath(__file__)), csv_file_name)):
         logging.info("file exists")
     else:
         logging.info('not existing')
-        with open('{}.xlsx'.format(csv_file_name), 'wb') as xlsx_file:
+        with open('{}/{}.xlsx'.format(os.path.dirname(os.path.abspath(__file__)), csv_file_name), 'wb') as xlsx_file:
             shutil.copyfileobj(response.raw, xlsx_file)
 
-with open('sma_partier.csv', 'r', encoding='utf-8') as csv_file:
+with open('{}/sma_partier.csv'.format(os.path.dirname(os.path.abspath(__file__))), 'r', encoding='utf-8') as csv_file:
     reader = csv.reader(csv_file)
     prev_dates = list(reader)
 
@@ -44,7 +44,7 @@ for string in release_dates:
         else:
             shall_write = True
             if shall_write is True:
-                with open('sma_partier.csv', 'a', newline='', encoding='utf-8') as csv_file:
+                with open('{}/sma_partier.csv'.format(os.path.dirname(os.path.abspath(__file__))), 'a', newline='', encoding='utf-8') as csv_file:
                     csv_writer = csv.writer(csv_file, delimiter=';', quotechar='“')
                     csv_writer.writerow([string])
                 payload = {'text': 'Nu finns det en ny excel-fil med små partier på Systembolaget den {}! Tryck på länken för att ladda ner filen: {}'.format(string, url)}
