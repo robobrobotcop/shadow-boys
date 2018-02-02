@@ -1,5 +1,6 @@
 # post to slack everytime a new excel file with beer releases on systembolaget is avaliable during 2018
 # -*- coding: utf-8 -*-
+import config
 import csv
 import json
 import logging
@@ -9,7 +10,7 @@ import requests
 import shutil
 logging.basicConfig(filename='systemet.log', level=logging.INFO, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 systembolaget = 'https://www.systembolaget.se/fakta-och-nyheter/nyheter-i-sortimentet/lanseringar/'
-webhook = ''  # input slack webhook
+webhook = config.webhook
 release_dates = ['19 jan', '2 feb', '16 feb', '2 mars', '16 mars', '6 april', '20 april', '4 maj', '18 maj', '8 juni', '6 juli', '3 aug', '17 aug', '7 sep', '21 sep', '5 okt', '19 okt', '2 nov', '16 nov', '7 dec']
 
 
