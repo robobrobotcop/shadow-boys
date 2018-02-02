@@ -20,15 +20,15 @@ for line in result:
     after = line.split('"')[1]
     file_name = after.split('/')[-1]
     csv_file_name = file_name.split('.xlsx')[0]
-    url = f'https://systembolaget.se{after}'
+    url = 'https://systembolaget.se{}'.format(after)
     logging.info(url)
     logging.info(file_name)
     response = requests.get(url, stream=True)
-    if os.path.isfile(f'{csv_file_name}.xlsx'):
+    if os.path.isfile('{}.xlsx'.format(csv_file_name)):
         logging.info("file exists")
     else:
         logging.info('not existing')
-        with open(f'{csv_file_name}.xlsx', 'wb') as xlsx_file:
+        with open('{}.xlsx'.foramt(csv_file_name), 'wb') as xlsx_file:
             shutil.copyfileobj(response.raw, xlsx_file)
 
 with open('sma_partier.csv', 'r', encoding='utf-8') as csv_file:
