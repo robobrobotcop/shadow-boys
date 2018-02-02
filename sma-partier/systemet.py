@@ -28,7 +28,7 @@ for line in result:
         logging.info("file exists")
     else:
         logging.info('not existing')
-        with open('{}.xlsx'.foramt(csv_file_name), 'wb') as xlsx_file:
+        with open('{}.xlsx'.format(csv_file_name), 'wb') as xlsx_file:
             shutil.copyfileobj(response.raw, xlsx_file)
 
 with open('sma_partier.csv', 'r', encoding='utf-8') as csv_file:
