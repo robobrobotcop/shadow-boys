@@ -1,7 +1,7 @@
 A script that posts a notification to your choice of slack channel using webhook whenever a new excel file for 'små partier' is available on systembolaget.se.
 
-- Create a webhook on your slack integrations page, paste it into the `config-sample.py` file.
+- Copy the `config-sample.py` file and name it `config.py`
 
-- Change name on the `config-sample.py` file to just `config.py`
+- Create a webhook on your slack integrations page, paste it into the `config.py` file.
 
 - Uses GET requests so it needs to be set up with cronjob.
