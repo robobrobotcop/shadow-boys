@@ -37,11 +37,11 @@ with open('{}/sma_partier.csv'.format(os.path.dirname(os.path.abspath(__file__))
     prev_dates = list(reader)
 
 for string in release_dates:
-    logging.info('små partier {}'.format(string))
+    print('små partier {}'.format(string))
     if 'små partier {}'.format(string) in systemet_request.text:
         shall_write = False
         if any(string in s for s in prev_dates):
-            logging.info('No new releases')
+            print('No new releases')
         else:
             shall_write = True
             if shall_write is True:
@@ -50,6 +50,6 @@ for string in release_dates:
                     csv_writer.writerow([string])
                 payload = {'text': 'Nu finns det en ny excel-fil med små partier på Systembolaget den {}! Tryck på länken för att ladda ner filen: {}'.format(string, url)}
                 post_slack = requests.post(webhook, data=json.dumps(payload))
-                logging.info(post_slack.text)
+                print(post_slack.text)
     else:
-        logging.info('No matches')
+        print('No matches')
