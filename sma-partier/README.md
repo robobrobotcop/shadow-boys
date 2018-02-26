@@ -4,4 +4,4 @@ A script that posts a notification to your choice of slack channel using webhook
 
 - Create a webhook on your slack integrations page, paste it into the `config.py` file.
 
-- Uses GET requests so it needs to be set up with cronjob.
+- Uses GET requests so it needs to be set up with cronjob (fyi, on the first run all previous dates will be posted to slack).
