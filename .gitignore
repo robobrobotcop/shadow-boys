@@ -1,3 +1,4 @@
+.gitignore
 systemet.log
 .DS_Store
 config.py
