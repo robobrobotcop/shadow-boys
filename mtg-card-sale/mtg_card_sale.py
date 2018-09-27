@@ -4,7 +4,7 @@ import requests
 from datetime import datetime, timedelta
 import mtg_card_sale_config
 today = datetime.utcnow()
-update = datetime.utcnow()-timedelta(1)
+update = datetime.utcnow() - timedelta(1)
 
 usr = mtg_card_sale_config.usr
 pwd = mtg_card_sale_config.pwd
@@ -29,7 +29,7 @@ response = requests.post(url, data="""{
             sum
         }
     }
-    }""".replace("$update", update.strftime("%Y-%m-%d")), auth=(usr, pwd))
+    }""".replace("$update", update.strftime("%Y-%m-%d %H:%M:%S")), auth=(usr, pwd))
 
 
 cards = ''
