@@ -16,7 +16,7 @@ release_dates = ['19 jan', '2 feb', '16 feb', '2 mars', '16 mars', '6 april', '2
 
 systemet_request = requests.get(systembolaget)
 
-result = re.findall('<a href=\"\/imagelibrary\/publishedmedia\/[\w]+\/Sm-_partier_[\w]+.xlsx\">[\w\s]+<\/a>', systemet_request.text)
+result = re.findall('<a href=\"\/imagelibrary\/publishedmedia\/[\w]+\/Sm-_partier_[\w]+(?:[.]xls)?.xlsx\">[\w\s]+<\/a>', systemet_request.text)
 for line in result:
     after = line.split('"')[1]
     file_name = after.split('/')[-1]
