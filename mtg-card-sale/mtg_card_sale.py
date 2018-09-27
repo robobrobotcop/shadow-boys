@@ -2,14 +2,14 @@
 import json
 import requests
 from datetime import datetime, timedelta
-import sell_cards_config
+import mtg_card_sale_config
 today = datetime.utcnow()
 update = datetime.utcnow()-timedelta(1)
 
-usr = sell_cards_config.usr
-pwd = sell_cards_config.pwd
-url = sell_cards_config.url
-webhook = sell_cards_config.webhook
+usr = mtg_card_sale_config.usr
+pwd = mtg_card_sale_config.pwd
+url = mtg_card_sale_config.url
+webhook = mtg_card_sale_config.webhook
 
 
 response = requests.post(url, data="""{
