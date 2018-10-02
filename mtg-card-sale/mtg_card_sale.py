@@ -38,10 +38,10 @@ for sold_card in response.json()['me']['sold']:
     cards = ''.join((cards, card))
 
 
+paid_out = 0
 if response.json()['me']['payouts']:
     for payout in response.json()['me']['payouts']:
-        paid_out = payout['sum']
-    sum(i for i in paid_out)
+        paid_out += payout['sum']
 else:
     paid_out = 0
 
