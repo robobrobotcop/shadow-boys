@@ -34,7 +34,10 @@ response = requests.post(url, data="""{
 
 cards = ''
 for sold_card in response.json()['me']['sold']: 
-    card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + ', Foil: ' + str(sold_card['foil']) + '\n'
+    if sold_card['foil']:
+        card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + ', *Foil*' + '\n'
+    else: 
+        card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + '\n'
     cards = ''.join((cards, card))
 
 
