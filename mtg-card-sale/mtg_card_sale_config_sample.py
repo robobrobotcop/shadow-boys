@@ -1,5 +1,0 @@
-
-usr = ''
-pwd = ''
-url = ''
-webhook = ''
