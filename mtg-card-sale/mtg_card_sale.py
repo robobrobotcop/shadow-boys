@@ -3,16 +3,13 @@ import json
 import requests
 import os
 from datetime import datetime, timedelta
-import sell_cards_config
+from retry import PostFailure, retry
 today = datetime.utcnow()
 update = datetime.utcnow() - timedelta(1)
 
 
-with open('{}/mtg_card_sale_config.json'.format(os.path.dirname(os.path.abspath(__file__))), 'r') as fh:
-    users = json.load(fh)
-
-
-for user in users: 
+@retry(PostFailure)
+def get_api_data(user):
     response = requests.post(user['url'], data="""{
         me {
             name
@@ -32,15 +29,31 @@ for user in users:
         }
         }""".replace("$update", update.strftime("%Y-%m-%d %H:%M:%S")), auth=(user['usr'], user['pwd']))
 
+    if response.status_code not in (200, 403):
+        raise PostFailure('error code from api')
+    return response
 
+
+@retry(PostFailure)
+def post_to_slack(payload, user):
+    response = requests.post(user['webhook'], data=json.dumps(payload))
+    if response.status_code != 200:
+        raise PostFailure('error code from slack')
+
+
+with open('{}/mtg_card_sale_config.json'.format(os.path.dirname(os.path.abspath(__file__))), 'r') as fh:
+    users = json.load(fh)
+
+
+for user in users:
+    response = get_api_data(user)
     cards = ''
-    for sold_card in response.json()['me']['sold']: 
+    for sold_card in response.json()['me']['sold']:
         if sold_card['foil']:
             card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + ', *Foil*' + '\n'
-        else: 
+        else:
             card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + '\n'
         cards = ''.join((cards, card))
-
 
     paid_out = 0
     if response.json()['me']['payouts']:
@@ -48,7 +61,6 @@ for user in users:
             paid_out += payout['sum']
     else:
         paid_out = 0
-
 
     payload = {
         'text': '*MTG cards for sale, update {}*'.format(today.strftime("%Y-%m-%d")) + '\n'
@@ -59,4 +71,4 @@ for user in users:
         '*New sold cards:*' + '\n' + str(cards),
         'channel': user['channel']}
 
-    response = requests.post(user['webhook'], data=json.dumps(payload))
+    post_to_slack(payload, user)
