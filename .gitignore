@@ -2,4 +2,4 @@
 systemet.log
 .DS_Store
 config.py
-mtg_card_sale_config.py
+mtg_card_sale_config.json
