@@ -70,5 +70,5 @@ for user in users:
         'Total sum paid out: ' + str(paid_out) + ' SEK' + '\n'
         '*New sold cards:*' + '\n' + str(cards),
         'channel': user['channel']}
-
-    post_to_slack(payload, user)
+    if cards != '':
+        post_to_slack(payload, user)
