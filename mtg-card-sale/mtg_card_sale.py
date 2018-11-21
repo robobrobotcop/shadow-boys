@@ -50,9 +50,9 @@ for user in users:
     cards = ''
     for sold_card in response.json()['me']['sold']:
         if sold_card['foil']:
-            card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + ', *Foil*' + '\n'
+            card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', à ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + ', *Foil*' + '\n'
         else:
-            card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + '\n'
+            card = str(sold_card['qty']) + ' ' + sold_card['name'] + ', à ' + str(sold_card['price']) + ' SEK, Language: ' + sold_card['lang'] + '\n'
         cards = ''.join((cards, card))
 
     paid_out = 0
