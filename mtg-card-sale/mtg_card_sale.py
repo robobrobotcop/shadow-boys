@@ -68,7 +68,7 @@ for user in users:
         'Value of inventory: ' + str(response.json()['me']['inventoryValue']) + ' SEK' + '\n'
         'Sum at client funds account (to be paid out): ' + str(response.json()['me']['clientFunds']) + ' SEK' + '\n'
         'Total sum paid out: ' + str(paid_out) + ' SEK' + '\n'
-        '*New sold cards:*' + '\n' + str(cards),
+        '*New sold cards:*' + '\n' + cards.encode('utf-8'),
         'channel': user['channel']}
     if cards != '':
         post_to_slack(payload, user)
