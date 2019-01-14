@@ -11,7 +11,7 @@ import shutil
 logging.basicConfig(filename='systemet.log', level=logging.INFO, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
 systembolaget = 'https://www.systembolaget.se/fakta-och-nyheter/nyheter-i-sortimentet/lanseringar/'
 webhook = config.webhook
-release_dates = ['18 jan', '1 feb', '15 feb', '8 mars', '22 mars', '5 april', '26 april', '3 maj', '17 maj', '7 juni', '5 juli', '2 aug', '16 aug']
+release_dates = ['18 januari', '1 februari', '15 februari', '8 mars', '22 mars', '5 april', '26 april', '3 maj', '17 maj', '7 juni', '5 juli', '2 augusti', '16 augusti']
 
 
 systemet_request = requests.get(systembolaget)
@@ -38,7 +38,7 @@ with open('{}/sma_partier.csv'.format(os.path.dirname(os.path.abspath(__file__))
 
 for string in release_dates:
     print('små partier {}'.format(string))
-    if 'små partier {}'.format(string) in systemet_request.text:
+    if 'Små partier {}'.format(string) in systemet_request.text:
         shall_write = False
         if any(string in s for s in prev_dates):
             print('No new releases')
