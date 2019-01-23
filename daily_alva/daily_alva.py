@@ -15,7 +15,7 @@ slack_channel = daily_alva_config.slack_channel
 bot_emoji = daily_alva_config.bot_emoji
 bot_username = daily_alva_config.bot_username
 
-with open('week_names.txt') as f:
+with open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__)))) as f:
     prev_names = [line.strip() for line in f.readlines()]
     names = [v for v in name_list if v not in prev_names]
 
@@ -37,14 +37,14 @@ payload = {'text': random.choice(phrases), 'link_names': 1, 'channel': slack_cha
 response = requests.post(webhook, data=json.dumps(payload))
 
 if response.status_code == 200:
-    with open('week_names.txt', 'a') as f:
+    with open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'a') as f:
         f.write(name1 + '\n' + name2 + '\n')
     print(name1, name2)
     y = int(datetime.date.today().strftime('%Y'))
     m = int(datetime.date.today().strftime('%m'))
     d = int(datetime.date.today().strftime('%d'))
     if date(y, m, d).weekday() == 4:
-        f = open('week_names.txt', 'w')
+        f = open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'w')
         f.truncate()
         f.close()
 else:
