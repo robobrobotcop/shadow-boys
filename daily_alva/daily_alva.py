@@ -29,8 +29,17 @@ p3 = '{} & {}, it’s your time to shine - let us know what you’re working on!
 p4 = '{} & {} hope you are having a great day, wanna share what you are doing today?'.format(name1, name2)
 p5 = 'Friday’s are all about me - but let’s make today about you. What’s up {} & {}?'.format(name1, name2)
 p6 = 'You’ve been way too quite lately {} & {}, tell us what’s going on today!'.format(name1, name2)
+p7 = 'Let’s hear from {} & {}, what are you up to?'.format(name1, name2)
+p8 = 'Give me a glimpse of what you’re working on {} & {}!'.format(name1, name2)
+p9 = 'Haven’t had you on my radar for a while, {} & {}! Please report on your status asap.'.format(name1, name2)
+p10 = 'Today is the day for a deep dive in your activity {} & {}, do you have something fun to share?'.format(name1, name2)
+p11 = 'Time to reel in some daily updates, let’s catch up with {} & {}!'.format(name1, name2)
+p12 = 'I feel curious today, {} & {} could you give me a glimpse of what is happening at {}?'.format(name1, name2, company)
+p13 = 'I’m experiencing some FOMO here, {} & {}, please share some updates for my newsfeed :scream:'.format(name1, name2)
+p14 = 'A slow day for me today, how are you doing {} & {}?'.format(name1, name2)
+p15 = 'What’s up at the innovation station today, {} & {}?'.format(name1, name2)
 
-phrases = [p1, p2, p3, p4, p5, p6]
+phrases = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15]
 
 payload = {'text': random.choice(phrases), 'link_names': 1, 'channel': slack_channel, 'icon_emoji': bot_emoji, 'username': bot_username}
 
