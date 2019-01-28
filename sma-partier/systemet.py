@@ -38,7 +38,7 @@ with open('{}/sma_partier.csv'.format(os.path.dirname(os.path.abspath(__file__))
 
 for string in release_dates:
     print('små partier {}'.format(string))
-    if 'Små partier {}'.format(string) in systemet_request.text:
+    if 'små partier {}'.format(string) in systemet_request.text:
         shall_write = False
         if any(string in s for s in prev_dates):
             print('No new releases')
