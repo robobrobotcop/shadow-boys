@@ -52,9 +52,17 @@ if response.status_code == 200:
     y = int(datetime.date.today().strftime('%Y'))
     m = int(datetime.date.today().strftime('%m'))
     d = int(datetime.date.today().strftime('%d'))
-    if date(y, m, d).weekday() == 4:
+
+    list_ = []
+    f = open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'r')
+    for row in f:
+        list_.append(row)
+    f.close()
+
+    if len(list_) > 30:
         f = open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'w')
         f.truncate()
         f.close()
+
 else:
     print(response.json().get('status'))
