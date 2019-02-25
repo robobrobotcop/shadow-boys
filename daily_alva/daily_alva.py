@@ -59,7 +59,7 @@ if response.status_code == 200:
         list_.append(row)
     f.close()
 
-    if len(list_) > 30:
+    if len(list_) > 40:
         f = open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'w')
         f.truncate()
         f.close()
