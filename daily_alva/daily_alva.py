@@ -60,8 +60,14 @@ if response.status_code == 200:
     f.close()
 
     if len(list_) > 40:
+        f = open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'r')
+        name_list = f.readlines()
+        f.close()
+
+        del name_list[0:20]
         f = open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'w')
         f.truncate()
+        f.writelines(name_list)
         f.close()
 
 else:
