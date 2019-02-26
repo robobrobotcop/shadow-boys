@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import csv
 import daily_alva_config
-import datetime
-from datetime import date
 import json
 import os
 import random
