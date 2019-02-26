@@ -49,9 +49,6 @@ if response.status_code == 200:
     with open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'a') as f:
         f.write(name1 + '\n' + name2 + '\n')
     print(name1, name2)
-    y = int(datetime.date.today().strftime('%Y'))
-    m = int(datetime.date.today().strftime('%m'))
-    d = int(datetime.date.today().strftime('%d'))
 
     list_ = []
     f = open('{}/week_names.txt'.format(os.path.dirname(os.path.abspath(__file__))), 'r')
