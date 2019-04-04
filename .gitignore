@@ -5,3 +5,4 @@ config.py
 mtg_card_sale_config.json
 *.pyc
 daily_alva_config.py
+.pylintrc
