@@ -55,7 +55,7 @@ async def main():
         print(response)
 
     elif time == '22':
-        payload = {'text': '@channel *Vertikaltasting 3* om tio minuter, vad har vi ens kvar att dricka?', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
+        payload = {'text': '@channel *Vertikaltasting 4* om tio minuter, vad har vi ens kvar att dricka?', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         response = await post_call(json.dumps(payload))
         print(response)
 
