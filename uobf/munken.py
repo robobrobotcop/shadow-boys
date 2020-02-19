@@ -65,7 +65,7 @@ async def main():
         print(response)
 
     elif time == '00':
-        payload = {'text': '@channel Munken tackar för sig och önksar Kollen en god natt. Tack för att ni besökte *UÖBF1*, vi ses nästa år!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
+        payload = {'text': '@channel Munken tackar för sig och önskar Kollen en god natt. Tack för att ni besökte *UÖBF1*, vi ses nästa år!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         response = await post_call(json.dumps(payload))
         print(response)
 
