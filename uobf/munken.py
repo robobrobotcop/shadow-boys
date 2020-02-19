@@ -29,7 +29,7 @@ async def main():
         response = await post_call(json.dumps(payload))
         print(response)
 
-    if time == '11':
+    elif time == '11':
         payload = {'text': '@channel Munken meddelar att det endast är 10 minuter kvar till första eventet för dagen. *Vertikaltasting 1*.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         response = await post_call(json.dumps(payload))
         print(response)
