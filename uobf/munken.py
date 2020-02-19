@@ -25,7 +25,7 @@ async def post_call(payload):
 
 async def main():
     if time == '10':
-        payload = {'text': '@channel Välkomna bröder! Om 5 minuter öppnar det absolut första UÖBF. Jag är Munken och kommer ta hand om er under dagen och uppdatera er om events. Önskar er alla en härlig smakupplevelse!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
+        payload = {'text': '@channel Välkomna bröder! Om 10 minuter öppnar det absolut första UÖBF. Jag är Munken och kommer ta hand om er under dagen och uppdatera er om events. Önskar er alla en härlig smakupplevelse!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         response = await post_call(json.dumps(payload))
         print(response)
 
