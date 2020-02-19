@@ -53,7 +53,7 @@ async def message():
         return payload
 
     elif time == '23':
-        payload = {'text': '@channel Äntligen dags för det vi alla väntat på *Kollens Surprise*. Riktig öl för rktiga munkar!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
+        payload = {'text': '@channel Äntligen dags för det vi alla väntat på *Kollens Surprise*. Riktig öl för riktiga munkar!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
     elif time == '00':
