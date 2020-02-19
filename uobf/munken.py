@@ -24,17 +24,17 @@ async def post_call(payload):
 
 async def main():
     if time == '10':
-        payload = {'text': '@channel Välkomna bröder! Om 10 minuter öppnar det absolut första UÖBF. Jag är Munken och kommer ta hand om er under dagen och uppdatera er om events. Önskar er alla en härlig smakupplevelse!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
+        payload = {'text': '@channel Välkomna bröder! Om 10 minuter öppnar det absolut första UÖBF. Jag är Munken och kommer ta hand om er under dagen och uppdatera er om evenemang. Önskar er alla en härlig smakupplevelse!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         response = await post_call(json.dumps(payload))
         print(response)
 
     elif time == '11':
-        payload = {'text': '@channel Munken meddelar att det endast är 10 minuter kvar till första eventet för dagen. *Vertikaltasting 1*.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
+        payload = {'text': '@channel Munken meddelar att det endast är 10 minuter kvar till första evenemanget för dagen. *Vertikaltasting 1*.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         response = await post_call(json.dumps(payload))
         print(response)
 
     elif time == '13':
-        payload = {'text': '@channel Dagens andra event gror runt hörnet. Se till att era glas är tomma! *Vertikaltasting 2*.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
+        payload = {'text': '@channel Dagens andra evenemang gror runt hörnet. Se till att era glas är tomma! *Vertikaltasting 2*.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         response = await post_call(json.dumps(payload))
         print(response)
 
