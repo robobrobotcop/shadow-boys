@@ -12,7 +12,6 @@ time = datetime.datetime.now().strftime("%H")
 sem = asyncio.Semaphore(16)
 loop = asyncio.get_event_loop()
 session = aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False))
-tasks = []
 
 
 async def post_call(payload):
