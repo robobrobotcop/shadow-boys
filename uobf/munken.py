@@ -71,4 +71,5 @@ async def main():
 
 if __name__ == '__main__':
     loop.run_until_complete(main())
+    session.close()
     loop.close()
