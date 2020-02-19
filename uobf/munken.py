@@ -6,7 +6,7 @@ import asyncio
 import datetime
 
 
-webhook = 'https://hooks.slack.com/services/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'
+webhook = ''
 
 time = datetime.datetime.now().strftime("%H")
 sem = asyncio.Semaphore(16)
