@@ -24,39 +24,39 @@ async def post_call(payload):
 
 async def message():
 
-    if time == '10':
+    if time == '09':
         payload = {'text': '@channel Välkomna bröder! Om 10 minuter öppnar det absolut första UÖBF. Jag är Munken och kommer ta hand om er under dagen och uppdatera er om evenemang. Önskar er alla en härlig smakupplevelse!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
-    elif time == '11':
+    elif time == '10':
         payload = {'text': '@channel Munken meddelar att det endast är 10 minuter kvar till första evenemanget för dagen. *Vertikaltasting 1*.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
-    elif time == '13':
+    elif time == '12':
         payload = {'text': '@channel Dagens andra evenemang gror runt hörnet. Se till att era glas är tomma! *Vertikaltasting 2*.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
-    elif time == '15':
+    elif time == '14':
         payload = {'text': '@channel Gammalt är godast, därav kommer det vara ett *blindtest* av gammal gueuze om 10 minuter!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
-    elif time == '18':
+    elif time == '17':
         payload = {'text': '@channel Munken har inte fått nog! Spela era dryckesbiljetter väl under *Vertikaltasting 3* om 10 minuter.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
-    elif time == '20':
+    elif time == '19':
         payload = {'text': '@channel Vad vore en Öl och Bärs Festival utan en *""Smakupplevelse""*? Vi får se.', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
-    elif time == '22':
+    elif time == '21':
         payload = {'text': '@channel *Vertikaltasting 4* om tio minuter, vad har vi ens kvar att dricka?', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
-    elif time == '23':
+    elif time == '22':
         payload = {'text': '@channel Äntligen dags för det vi alla väntat på *Kollens Surprise*. Riktig öl för riktiga munkar!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
-    elif time == '00':
+    elif time == '23':
         payload = {'text': '@channel Munken tackar för sig och önskar Kollen en god natt. Tack för att ni besökte *UÖBF1*, vi ses nästa år!', 'link_names': 1, 'channel': '#test-messages', 'icon_emoji': ':kapittel:', 'username': 'Munken'}
         return payload
 
